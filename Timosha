@@ -1,1 +1,61 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/JustAScripts/Notifier/main/Ping.lua"))()
 
+iku = coroutine.create(function() 
+ VirtualUser = game:GetService("VirtualUser")
+    game:GetService("Players").LocalPlayer.Idled:Connect(function()
+        VirtualUser:CaptureController()
+        VirtualUser:ClickButton2(Vector2.new())
+    end)
+end) 
+coroutine.resume(iku)
+
+function proxi(0.2)
+   spawn(function(0.2)
+     for _, pro in ipairs(workspace:GetDescendants()) do
+         if pro:IsA("ProximityPrompt") then
+            fireproximityprompt(pro)
+           end
+       end
+   end) 
+end
+
+Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))()
+
+function ThisActuallyCool()
+    local currentTime = os.date("*t")
+    local hour = currentTime.hour
+
+    if hour >= 6 and hour < 12 then
+        return "☃️"
+    elseif hour >= 12 and hour < 15 then
+        return "☃️"
+    elseif hour >= 15 and hour < 18 then
+        return "☃️"
+    elseif hour >= 18 or hour < 6 then
+        return "☃️"
+    else
+        return "☃️"
+    end
+end
+
+PhantomForcesWindow = Library:NewWindow("Minion Sim " .. ThisActuallyCool())
+
+WeLoveCat = PhantomForcesWindow:NewSection("Main")
+
+WeLoveCat:CreateToggle("+100k 🍌", function(value)
+local args = {
+    [1] = -100000,
+    [2] = "Banana"
+}
+
+game:GetService("ReplicatedStorage").remoteEvents.upgrade:FireServer(unpack(args))
+end) ;
+
+WeLoveCat:CreateToggle("-100k 🍌", function(value)
+local args = {
+    [1] = 100000,
+    [2] = "Banana"
+}
+
+game:GetService("ReplicatedStorage").remoteEvents.upgrade:FireServer(unpack(args))
+end) ;
