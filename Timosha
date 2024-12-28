@@ -1,4 +1,7 @@
+
 loadstring(game:HttpGet("https://raw.githubusercontent.com/JustAScripts/Notifier/main/Ping.lua"))()
+
+local players = game:GetService("Players")
 
 iku = coroutine.create(function() 
  VirtualUser = game:GetService("VirtualUser")
@@ -8,16 +11,6 @@ iku = coroutine.create(function()
     end)
 end) 
 coroutine.resume(iku)
-
-function proxi(0.2)
-   spawn(function(0.2)
-     for _, pro in ipairs(workspace:GetDescendants()) do
-         if pro:IsA("ProximityPrompt") then
-            fireproximityprompt(pro)
-           end
-       end
-   end) 
-end
 
 Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))()
 
@@ -38,24 +31,11 @@ function ThisActuallyCool()
     end
 end
 
-PhantomForcesWindow = Library:NewWindow("Minion Sim " .. ThisActuallyCool())
+PhantomForcesWindow = Library:NewWindow("Тимоша Скрипт " .. ThisActuallyCool())
 
-WeLoveCat = PhantomForcesWindow:NewSection("Main")
-
-WeLoveCat:CreateToggle("+100k 🍌", function(value)
-local args = {
-    [1] = -100000,
-    [2] = "Banana"
-}
-
-game:GetService("ReplicatedStorage").remoteEvents.upgrade:FireServer(unpack(args))
-end) ;
-
-WeLoveCat:CreateToggle("-100k 🍌", function(value)
-local args = {
-    [1] = 100000,
-    [2] = "Banana"
-}
-
-game:GetService("ReplicatedStorage").remoteEvents.upgrade:FireServer(unpack(args))
-end) ;
+WeLoveCat = PhantomForcesWindow:NewSection("Скрипты")
+--[[ Hub Script ]] --
+WeLoveCat:CreateButton("Виверн", function() loadstring(game:HttpGet("https://raw.githubusercontent.com/wyvernleaker/WYVERN/main/WYVERN.lua",true))()
+  Sound(6150774030, 0.1)
+Notify("Виверн загрузился",3)
+end)
